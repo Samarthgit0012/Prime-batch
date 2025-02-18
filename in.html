@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>How to Take User Input in JavaScript</title>
+</head>
+
+<body>
+	<h1>
+		How to take user input in JavaScript
+	</h1>
+
+	<script>
+		const name = prompt("Please enter your name:");
+        const n = parseInt(prompt("Enter number of subject"));
+		let total=0;
+        for (let i = 1;i<=n;i++) {
+            let marks = parseFloat(prompt(`Enter marks for subject ${i}:`));
+			total += marks;
+        }
+        let avg = total / n;
+
+		
+		document.write(`<h2>Results for ${name}</h2>`);
+		document.write(`Total Marks: ${total}<br>`);
+		document.write(`Average Percentage: ${avg.toFixed(2)}%<br>`);
+
+	</script>
+</body>
+
+</html>
