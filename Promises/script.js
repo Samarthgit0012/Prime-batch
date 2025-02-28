@@ -79,7 +79,6 @@
     }
     
 */
-
 // const res = fetch('https://dummyjson.com/test');
 // console.log(res);
 // res.then((a) => {
@@ -94,7 +93,7 @@
 // });
 //-----------------------
 
-const getData=()=>{
+    const getData=()=>{
     const pr = fetch("https://api.github.com/user/Samarth0012");
     console.log(pr);
     pr.then((a) => {;
@@ -118,5 +117,4 @@ const getData=()=>{
         <img src='${avatar_url}' alt='avatar'>
         <a href=${html_url}>View Profile</a>
         `;
-    
-    }
+   }     

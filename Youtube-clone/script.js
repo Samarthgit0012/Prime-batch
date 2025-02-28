@@ -18,7 +18,7 @@ const getData = () => {
     })
 }
 
-getData()
+// getData()+ 
 
 const dummyData = [
         {
