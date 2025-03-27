@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 // import axios from "axios";
 import { useState } from "react"
+import Card from "./Components/Card";
 
 // // const AppPage = () => {
 
@@ -86,7 +87,7 @@ import { useState } from "react"
 
 const AppPage = () => {
   
-  const [Data, setData] = useState({});
+  const [Data, setData] = useState([]);
   const [count, Setcount] = useState(0);
 
   const getData = async() => {
@@ -94,7 +95,7 @@ const AppPage = () => {
     try {
       const response = await fetch('https://dummyjson.com/products');
       const temp = await response.json();
-      setData(temp);
+      setData(temp.products);
       console.log("Completed successful", temp);
     }
     catch (err){
@@ -106,14 +107,19 @@ const AppPage = () => {
   
   useEffect(() => {
     getData()
-  }, [count])
+  }, [])
 
 
   return (
     <React.Fragment>
       <h1>Hello</h1>
       <p>Wow</p>
-      <button onClick={()=> Setcount(count+1)}>Click me to render</button>
+     {/* <button onClick={()=> Setcount(count+1)}>Click me to render</button> */}
+     <div className="card-container">
+        {Data.map((ele) => (
+          <Card key={ele.id} title={ele.title} price={ele.price} thumbnail={ele.thumbnail} />
+        ))}
+      </div>
     </React.Fragment>
   )
 }
